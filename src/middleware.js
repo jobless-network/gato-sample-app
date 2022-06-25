@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
+  console.log(`Middleware running for ${req.nextUrl.pathname}`);
   const res = await fetch(
     `https://gato-api-server.herokuapp.com/authorization/required?organization=developer_dao&gateType=Web Page&gateId=${req.nextUrl.pathname}`
   );
