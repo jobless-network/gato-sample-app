@@ -14,7 +14,13 @@ export default function Login() {
 
     const signer = provider.getSigner();
     const address = await signer.getAddress();
-    const signature = await signer.signMessage("GATO Access Control");
+
+    const res = await fetch(
+      `https://gato-api-server.herokuapp.com/authorization/signature_request?address=${address}`
+    );
+    const data = await res.json();
+
+    const signature = await signer.signMessage(data.message);
 
     document.cookie = `signature=${signature}; path=/`;
     document.cookie = `wallet=${address}; path=/`;
