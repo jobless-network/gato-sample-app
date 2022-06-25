@@ -12,7 +12,7 @@ export async function middleware(req) {
     const walletAddress = req.cookies.getWithOptions("wallet");
 
     // User never signed, need to login
-    if (!walletAddress) {
+    if (!walletAddress.value) {
       return NextResponse.redirect(
         new URL(`/login?from=${req.nextUrl.pathname}`, req.url)
       );
