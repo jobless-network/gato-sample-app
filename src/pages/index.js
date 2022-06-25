@@ -12,10 +12,6 @@ export default function Home() {
           Gato Sample Application
         </h2>
 
-        <div> 
-          <ConnectWallet/>
-        </div>
-
         <div className={styles.grid}>
           <Link href="/" >
             <a className={styles.card}>
