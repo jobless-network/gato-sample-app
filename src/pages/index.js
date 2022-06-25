@@ -1,6 +1,7 @@
 import Link from "next/link"
 
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
+import { ConnectWallet } from '../components/ConnectWallet'
 
 export default function Home() {
   return (
@@ -8,8 +9,12 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2 className={styles.title}>
-          Multi-page website using Next.js
+          Gato Sample Application
         </h2>
+
+        <div> 
+          <ConnectWallet/>
+        </div>
 
         <div className={styles.grid}>
           <Link href="/" >
@@ -24,10 +29,7 @@ export default function Home() {
             </a>
           </Link>
 
-          <Link
-            href="/contact"
-            
-          >
+          <Link href="/contact" >
             <a className={styles.card}>
             <h2>Contact &rarr;</h2>
             </a>
