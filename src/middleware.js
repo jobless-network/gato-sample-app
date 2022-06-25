@@ -28,7 +28,7 @@ export async function middleware(req) {
     console.log(data);
 
     if (!data) {
-      return NextResponse.redirect(new URL(`/unauthorized`, req.url));
+      return NextResponse.rewrite(new URL("/unauthorized", req.url));
     }
   }
 
